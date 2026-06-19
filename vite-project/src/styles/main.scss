@@ -1,97 +1,40 @@
-@import "../node_modules/bootstrap/scss/functions";
-
+// late change, but i just changed my code back to my previous scss one, bc i realised I didn't need a component library like bootstrap. So just pasted it back.
+// hope this is fine.
 
 
 $bg: #ebe8fb;
 $panel: #f6f5fd;
 $white: #ffffff;
-
-
 $text: #1e1b24;
 $muted: #6f6a79;
 $line: #6d6777;
-
 $shadow: 0 14px 36px rgba(30, 27, 36, 0.08);
-$body-bg: $bg;
-$body-color: $text;
-
-
-$border-color: rgba(109, 103, 119, 0.15);
-
-
-$font-family-sans-serif: Inter, system-ui, -apple-system, BlinkMacSystemFont,
-  'Segoe UI', sans-serif;
-
-$font-family-serif: Georgia, 'Times New Roman', serif;
-
-$line-height-base: 1.5;
-$font-weight-base: 400;
-
-$theme-colors: (
-  "primary": $text,
-  "muted": $muted,
-  "panel": $panel,
-  "light": $white,
-);
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 640px,
-
-  md: 860px,
-  lg: 1100px,
-
-  xl: 1200px,
-  xxl: 1400px
-);
-
-
-$container-max-widths: (
-  sm: 540px,
-  md: 860px,
-
-  lg: 1100px,
-  xl: 1200px
-  
-);
-
-
-
-
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/variables-dark";
-
-@import "../node_modules/bootstrap/scss/maps";
-@import "../node_modules/bootstrap/scss/mixins";
-
 
 
 :root {
-  font-family: $font-family-sans-serif;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: $text;
-
   background: $bg;
-  line-height: $line-height-base;
-  font-weight: $font-weight-base;
 
+  line-height: 1.5;
+  font-weight: 400;
 }
-
 
 * {
   box-sizing: border-box;
+
 }
 
 html,
 body,
 #root {
-  min-height: 100%;
-}
-
+  min-height: 100%;}
 
 body {
   margin: 0;
   background: $bg;
-  color: $text; }
+  color: $text;
+}
 
 a {
   color: inherit;
@@ -101,22 +44,19 @@ a {
 button,
 input {
   font: inherit;
-}
 
+}
 
 img {
   display: block;
   max-width: 100%;
-}
+  }
 
 .shell {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
-
-
 
 .site-header {
   position: sticky;
@@ -125,7 +65,7 @@ img {
 
   background: rgba(244, 242, 252, 0.92);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid rgba(109, 103, 119, 0.15);
 
   &__inner {
     max-width: 1200px;
@@ -133,13 +73,13 @@ img {
     padding: 0.85rem 1rem;
 
     display: grid;
+    
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 1rem;
-  }
 
-  
   }
+}
 
 .site-brand {
   display: inline-flex;
@@ -151,9 +91,10 @@ img {
   &__logo {
     height: 92px;
     width: auto;
-
     display: flex;
     align-items: center;
+
+
   }
 }
 
@@ -164,9 +105,7 @@ img {
 
   gap: 1.25rem;
   flex-wrap: wrap;
-
 }
-
 
 .nav-link {
   display: inline-flex;
@@ -180,14 +119,17 @@ img {
   text-transform: uppercase;
   font-size: 0.88rem;
   letter-spacing: 0.03em;
-
   cursor: pointer;
+
   padding: 0.25rem 0.1rem;
+
 
   &.is-active {
     font-weight: 700;
-  }}
 
+
+  }
+}
 
 .category-menu,
 .search-modal {
@@ -202,17 +144,17 @@ img {
   transform: translateX(-50%);
   width: min(760px, calc(100vw - 2rem));
   max-height: 65vh;
-
   overflow: auto;
-  background: rgba(255, 255, 255, 0.98);
-  border: 1px solid $border-color;
 
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(109, 103, 119, 0.15);
   border-radius: 1.25rem;
   box-shadow: $shadow;
-  padding: 1rem;
 
+  padding: 1rem;
   display: none;
 }
+
 
 .category-menu.is-open .category-menu__panel,
 .category-menu:hover .category-menu__panel,
@@ -227,22 +169,22 @@ img {
 }
 
 
-.category-menu__label {
-  font-family: $font-family-serif;
-  font-size: 1rem;
-  text-transform: capitalize;
 
+.category-menu__label {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1rem;
+
+  text-transform: capitalize;
   border-bottom: 1px solid rgba(109, 103, 119, 0.18);
   padding-bottom: 0.35rem;
 }
 
 .category-menu__links {
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 0.45rem 0.8rem;
-
 }
+
 
 .category-menu__link {
   display: block;
@@ -253,10 +195,9 @@ img {
   &:hover {
     color: $text;
   }
+
+
 }
-
-
-
 
 .category-menu__empty {
   color: $muted;
@@ -265,6 +206,7 @@ img {
 .hero-wrap {
   max-width: 1200px;
   width: calc(100% - 2rem);
+
   margin: 1rem auto 0;
 }
 
@@ -276,13 +218,11 @@ img {
   align-items: center;
   gap: 0.4rem;
 
-
-
   &__viewport {
     overflow: hidden;
     border-radius: 0.5rem;
-    box-shadow: $shadow;
 
+    box-shadow: $shadow;
     background: #111;
   }
 
@@ -292,11 +232,12 @@ img {
     will-change: transform;
   }
 
+
+
   &__slide {
     min-width: 100%;
     aspect-ratio: 16 / 7;
     background: #111;
-
   }
 
   &__imageLink,
@@ -310,21 +251,18 @@ img {
   }
 }
 
-
-
 .carousel-arrow {
   width: 40px;
   height: 40px;
-  border-radius: 999px;
 
+  border-radius: 999px;
   border: 1px solid rgba(30, 27, 36, 0.45);
   background: rgba(255, 255, 255, 0.25);
-  color: $text;
 
+  color: $text;
   display: grid;
   place-items: center;
   cursor: pointer;
-
 
   &:hover {
     background: rgba(255, 255, 255, 0.7);
@@ -334,11 +272,9 @@ img {
 .intro-block {
   max-width: 920px;
   margin: 1.6rem auto 0;
-
   padding: 0 1rem;
   text-align: center;
   color: $muted;
-
 
   &__line {
     height: 1px;
@@ -349,7 +285,6 @@ img {
   p {
     margin: 0;
     font-size: 0.95rem;
-
   }
 }
 
@@ -357,7 +292,9 @@ img {
 .home-grid {
   max-width: 1200px;
   width: calc(100% - 2rem);
-  margin: 1.8rem auto 0;}
+  margin: 1.8rem auto 0;
+
+}
 
 .section-heading {
   display: flex;
@@ -367,7 +304,7 @@ img {
 
   h2 {
     margin: 0;
-    font-family: $font-family-serif;
+    font-family: Georgia, 'Times New Roman', serif;
 
     font-size: 1.55rem;
     font-weight: 500;
@@ -379,67 +316,60 @@ img {
 
     button {
       width: 38px;
-
       height: 38px;
       border-radius: 999px;
+
       border: 1px solid rgba(109, 103, 119, 0.25);
       background: rgba(255, 255, 255, 0.65);
-
       cursor: pointer;
       display: grid;
       place-items: center;
     }
-  }}
+  }
+}
 
 .post-carousel__scroller {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(280px, 1fr);
-
   gap: 1rem;
+
   overflow-x: auto;
-
   padding-bottom: 0.4rem;
-  scroll-snap-type: x mandatory;
 
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar {
     height: 0;
-  }
-}
 
+  }}
 
 .post-carousel__item {
-  scroll-snap-align: start;
-}
+  scroll-snap-align: start;}
 
 .post-card {
   background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(109, 103, 119, 0.13);
   box-shadow: $shadow;
-
   overflow: hidden;
+
   display: grid;
   grid-template-rows: auto 1fr;
-
   min-height: 100%;
-
-
-
 
   &__imageWrap {
     display: block;
     aspect-ratio: 16 / 9;
     background: #ddd;
-
   }
 
   &__image {
     width: 100%;
     height: 100%;
-    object-fit: cover;}
+    object-fit: cover;
+  }
 
   &__body {
     padding: 0.85rem 0.95rem 0.9rem;
@@ -447,9 +377,11 @@ img {
     gap: 0.45rem;
   }
 
+
+
   &__title {
     margin: 0;
-    font-family: $font-family-serif;
+    font-family: Georgia, 'Times New Roman', serif;
     font-size: 1.1rem;
 
     font-weight: 500;
@@ -457,38 +389,34 @@ img {
 
     a {
       display: -webkit-box;
-      -webkit-line-clamp: 2; //don't know how to fix this, unsure, but i am too comfortable withthe current code that i am afraid to mess with it, so if it works then it works. If it isn't broken then don't fix it
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+
+
     }
-
   }
-
 
 
   &__meta {
     font-size: 0.78rem;
     color: $muted;
-    display: flex;
 
+    display: flex;
     gap: 0.35rem;
     flex-wrap: wrap;
-}
-
-
+  }
 
   &__content {
     margin: 0;
     color: $muted;
     font-size: 0.93rem;
     display: -webkit-box;
+    -webkit-line-clamp: 3; //don't know how to fix this, unsure, but i am too comfortable withthe current code that i am afraid to mess with it, so if it works then it works. If it isn't broken then don't fix it
 
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-
     min-height: 4.1em;
-
   }
 
   &__footer {
@@ -500,7 +428,6 @@ img {
     gap: 1rem;
   }
 
-
   &__category {
     font-size: 0.78rem;
     text-transform: uppercase;
@@ -511,9 +438,7 @@ img {
     font-size: 0.84rem;
     color: $muted;
   }
-
 }
-
 
 .home-grid {
   display: grid;
@@ -524,16 +449,14 @@ img {
   &__tile {
     background: rgba(255, 255, 255, 0.82);
     border: 1px solid rgba(109, 103, 119, 0.13);
-
     box-shadow: $shadow;
-    overflow: hidden;}
+    overflow: hidden;
+  }
 
   &__image {
     width: 100%;
     aspect-ratio: 16 / 10;
-
     object-fit: cover;
-
   }
 
   &__content {
@@ -541,8 +464,9 @@ img {
 
     h3 {
       margin: 0 0 0.35rem;
-      font-family: $font-family-serif;
+      font-family: Georgia, 'Times New Roman', serif;
       font-size: 1.02rem;
+
       line-height: 1.15;
     }
 
@@ -550,23 +474,22 @@ img {
       margin: 0;
       color: $muted;
       font-size: 0.9rem;
-    }}
+    }
+  }
 }
-
-
 
 .home-divider {
   max-width: 1200px;
   width: calc(100% - 2rem);
-
   height: 1px;
+
   background: rgba(109, 103, 119, 0.65);
   margin: 0.4rem auto 2rem;
 }
 
-
 .post-page {
   max-width: 1200px;
+
   width: calc(100% - 2rem);
   margin: 1rem auto 2rem;
 
@@ -574,8 +497,7 @@ img {
     background: #111;
     overflow: hidden;
     box-shadow: $shadow;
-  }                                                       
-               
+  }
 
   &__heroImage {
     width: 100%;
@@ -591,23 +513,21 @@ img {
 
     h1 {
       margin: 0;
-      font-family: $font-family-serif;
-
+      font-family: Georgia, 'Times New Roman', serif;
       font-size: clamp(2rem, 4vw, 3.1rem);
       line-height: 1.15;
+
       font-weight: 500;
+    
     }
   }
-
-
-
 
   &__meta {
     display: flex;
     justify-content: center;
     gap: 1.2rem;
-    flex-wrap: wrap;
 
+    flex-wrap: wrap;
     color: $muted;
     padding: 0.8rem 0 0.5rem;
     font-size: 0.92rem;
@@ -617,13 +537,13 @@ img {
     height: 1px;
     background: rgba(109, 103, 119, 0.8);
     margin: 0.25rem auto 1.25rem;
-
-    max-width: 980px;}
+    max-width: 980px;
+  }
 
   &__content {
     max-width: 900px;
-    margin: 0 auto;
 
+    margin: 0 auto;
     text-align: center;
     color: $text;
 
@@ -634,18 +554,16 @@ img {
     ol {
       display: inline-block;
       text-align: left;
-      margin: 0.35rem auto 0;
 
+      margin: 0.35rem auto 0;
       padding-left: 1.4rem;
       color: $text;
 
       li + li {
         margin-top: 0.45rem;
       }
-}}
-
-
-
+    }
+  }
 
   &__empty {
     min-height: 50vh;
@@ -654,23 +572,21 @@ img {
     text-align: center;
     gap: 1rem;
   }
+
 }
 
 .button-link {
   display: inline-flex;
   align-items: center;
-
   justify-content: center;
   min-height: 44px;
 
   padding: 0.7rem 1rem;
-  border-radius: 999px;
 
+  border-radius: 999px;
   background: $text;
   color: $white;
-
 }
-
 
 .search-modal__backdrop {
   position: fixed;
@@ -682,15 +598,15 @@ img {
   padding: 6rem 1rem 1rem;
 }
 
-
 .search-modal__panel {
   position: relative;
   width: min(680px, 100%);
   background: rgba(255, 255, 255, 0.98);
-
   border-radius: 1.25rem;
+
   box-shadow: $shadow;
-  padding: 1rem;}
+  padding: 1rem;
+}
 
 .search-modal__close {
   position: absolute;
@@ -699,16 +615,13 @@ img {
   border: 0;
 
   background: transparent;
-  cursor: pointer;
-
-
-}
+  cursor: pointer;}
 
 .search-modal__header {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
 
+  gap: 0.65rem;
   border: 1px solid rgba(109, 103, 119, 0.18);
   border-radius: 999px;
   padding: 0.75rem 1rem;
@@ -718,7 +631,6 @@ img {
     outline: 0;
     width: 100%;
     background: transparent;
-
   }
 }
 
@@ -726,11 +638,10 @@ img {
   margin-top: 1rem;
   display: grid;
   gap: 0.5rem;
+
   max-height: 52vh;
   overflow: auto;
 }
-
-
 
 .search-modal__result {
   display: grid;
@@ -741,7 +652,6 @@ img {
   border-radius: 1rem;
   background: $panel;
 
-
   strong {
     font-weight: 600;
   }
@@ -750,9 +660,8 @@ img {
     color: $muted;
     font-size: 0.85rem;
     text-transform: capitalize;
-
-  }
-}
+  
+}}
 
 .search-modal__empty {
   color: $muted;
@@ -767,45 +676,43 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1.6rem 1rem 2rem;
-
     display: grid;
+
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1.5rem;
-
     color: $text;
-
 
     h4 {
       margin: 0 0 0.55rem;
       font-size: 0.95rem;
       font-weight: 700;
+
     }
 
     p {
       margin: 0 0 0.25rem;
       color: $muted;
-
       font-size: 0.82rem;
-    }}}
+    }
+  }
+}
 
-@include media-breakpoint-down(lg) {
+@media (max-width: 1100px) {
   .home-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@include media-breakpoint-down(md) {
+@media (max-width: 860px) {
   .site-header__inner {
     grid-template-columns: 1fr;
+
     justify-items: center;
     height: 64px;
   }
 
   .site-nav {
-    gap: 0.9rem;
-
-
-  }
+    gap: 0.9rem;}
 
   .hero-carousel {
     grid-template-columns: 44px minmax(0, 1fr) 44px;
@@ -815,18 +722,15 @@ img {
     grid-auto-columns: minmax(260px, 82vw);
   }
 
-
   .site-footer__inner {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-
-
-
-@include media-breakpoint-down(sm) {
+@media (max-width: 640px) {
   .site-header__inner {
     padding: 0.75rem 0.75rem 0.9rem;
+    
   }
 
   .site-brand__logo {
@@ -839,9 +743,7 @@ img {
 
   .nav-link {
     font-size: 0.78rem;
-
   }
-
 
   .hero-wrap,
   .post-carousel,
@@ -851,10 +753,8 @@ img {
     width: calc(100% - 1rem);
   }
 
-
-  .hero-carousel {
+  .hero-carousel { 
     grid-template-columns: 34px minmax(0, 1fr) 34px;
-  
   }
 
   .hero-carousel__slide {
@@ -866,27 +766,21 @@ img {
   }
 
   .home-grid {
-    grid-template-columns: 1fr; }
+    grid-template-columns: 1fr;
+
+  }
 
   .site-footer__inner {
-    grid-template-columns: 1fr;}
+    grid-template-columns: 1fr;
+  }
 
   .post-page__meta {
     gap: 0.5rem 0.8rem;
     font-size: 0.84rem;
   }
 
-
   .search-modal__backdrop {
-    padding-top: 5rem;
 
+    padding-top: 5rem;
   }
 }
-
-
-
-
-
-
-
-
